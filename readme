@@ -1,0 +1,13 @@
+A daemon C program to insert a kernel module to print 'Hello World!' if not inserted and delete it if already present every 5 seconds.
+
+It can be compiled through the following statement:
+
+gcc daemon.c -o daemon
+
+To execute it, use the following command:
+
+sudo ./daemon 
+
+When executed, it writes 'Hello World' to kernel log, if module is not already present. In the other case, it removes the module. This process is repeated every 5 seconds (Required kernel module's .ko file is present in the repository). The result can be viewed through the following statement:
+
+dmesg | tail -10
